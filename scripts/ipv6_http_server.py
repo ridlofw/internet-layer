@@ -72,9 +72,9 @@ class IoTCloudRequestHandler(BaseHTTPRequestHandler):
 
 def run_server(bind_ip: str, port: int):
     print("=" * 60)
-    print(f"[*] Starting IoT IPv6 Cloud Server")
+    print("[*] Starting IoT IPv6 Cloud Server")
     print(f"[*] Listening Address : [{bind_ip}]:{port}")
-    print(f"[*] Protocol          : IPv6 / TCP (HTTP/1.0)")
+    print("[*] Protocol          : IPv6 / TCP (HTTP/1.0)")
     print("=" * 60)
     print("Press Ctrl+C to terminate.")
 
@@ -92,8 +92,17 @@ def run_server(bind_ip: str, port: int):
 
 def main():
     parser = argparse.ArgumentParser(description="IoT Cloud Collector IPv6 HTTP Server")
-    parser.add_argument("--bind", default=DEFAULT_BIND_IPV6, help=f"IPv6 address to bind (default: {DEFAULT_BIND_IPV6})")
-    parser.add_argument("--port", type=int, default=DEFAULT_PORT, help=f"Listening port (default: {DEFAULT_PORT})")
+    parser.add_argument(
+        "--bind",
+        default=DEFAULT_BIND_IPV6,
+        help=f"IPv6 address to bind (default: {DEFAULT_BIND_IPV6})",
+    )
+    parser.add_argument(
+        "--port",
+        type=int,
+        default=DEFAULT_PORT,
+        help=f"Listening port (default: {DEFAULT_PORT})",
+    )
     args = parser.parse_args()
 
     run_server(args.bind, args.port)

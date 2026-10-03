@@ -20,8 +20,8 @@ def send_ipv6_http_request(host: str, port: int, path: str, timeout: float = 5.0
     """Connects to an IPv6 HTTP server, sends a GET request, and prints the response."""
     url = f"http://[{host}]:{port}{path}"
     print(f"[*] Target Endpoint : {url}")
-    print(f"[*] Address Family  : AF_INET6 (IPv6)")
-    print(f"[*] Transport Proto : SOCK_STREAM (TCP)")
+    print("[*] Address Family  : AF_INET6 (IPv6)")
+    print("[*] Transport Proto : SOCK_STREAM (TCP)")
     print(f"[*] Connecting to [{host}]:{port} ...")
 
     start_time = time.time()
